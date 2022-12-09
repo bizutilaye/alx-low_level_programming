@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	chal lc;
+	char lc;
 
 	for (lc = 'a'; lc <= 'z'; lc++)
 	{
