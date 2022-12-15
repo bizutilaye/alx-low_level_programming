@@ -2,24 +2,26 @@
 
 /**
  * print_diagonal - drawes diagonal on the terminal
- * @n: number of time character \
+ * @n: number of time character
  */
-
 void print_diagonal(int n)
 {
-	int i, j;
-
-	for (i = 0; i < n; i++)
+	if (n <= 0)
 	{
-		for (j = 0; j < n; j++)
+		_putchar('\n');
+	}
+	else
+	{
+		int i, j;
+
+		for (i = 0; i < n; i++)
 		{
-			if (j == i)
+			for (j = 0; j < n; j++)
 			{
-				_putchar('\\');
-			}
-			else if (j < i)
-			{
-				_putchar(' ');
+				if (j == i)
+					_putchar('\\')
+				else if (j < 1)
+					_putchar('');
 			}
 			_putchar('\n');
 		}
