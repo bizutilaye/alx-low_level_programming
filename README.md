@@ -1,1 +1,1 @@
-Low level programing
+Pointers and arrays
