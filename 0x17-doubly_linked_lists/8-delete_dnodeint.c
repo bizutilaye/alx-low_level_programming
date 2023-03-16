@@ -9,31 +9,31 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-    dlistint_t *current = *head;
-    dlistint_t *prev = NULL;
-    unsigned int i = 0;
+	dlistint_t *current = *head;
+	dlistint_t *prev = NULL;
+	unsigned int i = 0;
 
-    if (*head == NULL) /* check if the list is empty */
-        return (-1);
+	if (*head == NULL)
+		return (-1);
 
-    while (current != NULL && i < index) /* traverse to the node at index */
-    {
-        prev = current;
-        current = current->next;
-        i++;
-    }
+	while (current != NULL && i < index)
+	{
+	prev = current;
+	current = current->next;
+	i++;
+	}
 
-    if (current == NULL) /* check if the node at index was found */
-        return (-1);
+	if (current == NULL)
+		return (-1);
 
-    if (prev == NULL) /* if index is 0, update head */
-        *head = current->next;
-    else
-        prev->next = current->next;
+	if (prev == NULL)
+		*head = current->next;
+	else
+		prev->next = current->next;
 
-    if (current->next != NULL) /* update the next node's prev pointer */
-        current->next->prev = prev;
+	if (current->next != NULL)
+		current->next->prev = prev;
 
-    free(current); /* free the memory allocated for the node */
-    return (1);
+	free(current);
+	return (1);
 }
